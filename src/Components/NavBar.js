@@ -49,8 +49,10 @@ function Navbar() {
         <li className="nav-item">
           <Analytics /> Analytics
         </li>
-        <li className="nav-item">
-          <Payment /> Payments
+        <li className="nav-item" id="payments">
+          <span>
+            <Payment /> Payments
+          </span>
         </li>
         <li className="nav-item">
           <PanToolSharp /> Tools
@@ -94,7 +96,7 @@ const NavbarStyles = styled.nav`
     display: flex;
     align-items: center;
     padding: 1rem 0;
-
+    margin-top: -1.8rem;
     img {
       width: 40%;
       height: 45%;
@@ -131,56 +133,24 @@ const NavbarStyles = styled.nav`
     li {
       display: block;
       padding-bottom: 0.7rem;
-
-      a {
-        display: block;
-        padding: 0.45rem 0rem;
-        position: relative;
-        font-weight: bold;
-        z-index: 10;
-        text-transform: uppercase;
-        transition: all 0.4s ease-in-out;
-        letter-spacing: 1px;
-
-        &:active,
-        &:focus {
-          background-color: var(--primary-color);
-          color: initial;
-        }
-
-        &:hover {
-          cursor: pointer;
-          background-color: var(--primary-color);
-          color: initial;
-        }
-
-        &::before {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 0;
-          height: 53%;
-          transition: All 0.4s ease-in-out;
-          z-index: -1;
-          opacity: 0.21;
-        }
-      }
-
-      a:hover::before {
-        width: 100%;
-        height: 100%;
+    }
+    #payments {
+      margin-left: -0.6rem;
+      width: 12.5rem;
+      background-color: #353c53;
+      border-radius: 5px;
+      span{
+        margin-left: .4rem;
       }
     }
   }
   .footer {
     display: flex;
     align-items: center;
-    /* padding: 1rem 0; */
     padding: 2px;
     background-color: #353c53;
     width: 90%;
-    margin-top: 160%;
+    margin-top: 170%;
     height: 3.8rem;
     border-radius: 5px;
     .img {
@@ -199,9 +169,9 @@ const NavbarStyles = styled.nav`
         margin-top: 1rem;
         font-size: 0.8rem;
       }
-      
+
       .avatar-visit {
-        margin-top: -.5rem;
+        margin-top: -0.5rem;
         font-size: 1rem;
         font-weight: bold;
       }
